@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahl-Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+
+        <!-- LEFT PANEL: Chat History -->
+        <div class="history-box">
+            <div class="history-header">
+                <h2>Verlauf</h2>
+                <button id="newChatBtn">Neuer Chat</button>
+            </div>
+            <ul id="history-list"></ul>
+        </div>
+
+        <!-- CENTER PANEL: Active Chat -->
+        <div class="chat-box">
+            <div class="chat-header">
+                <h1>Wahl-Chatbot</h1>
+                <p>Stelle eine Frage zu den Parteien oder wähle eine Beispiel-Frage aus.</p>
+            </div>
+            <div class="chat-messages" id="messages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="Schreibe deine Frage...">
+                <button id="sendBtn">Senden</button>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: Suggestions -->
+        <div class="suggestions-box">
+            <h2>Beispiel-Fragen</h2>
+            <ul id="suggestion-list"></ul>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

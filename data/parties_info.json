@@ -1,0 +1,18 @@
+{
+  "Fortschrittspartei": {
+    "slogan": "Zukunft gestalten – mit Innovation und Mut.",
+    "beschreibung": "Die Fortschrittspartei setzt auf wissenschaftliche Forschung, digitale Technologien und innovative Lösungen, um gesellschaftliche Herausforderungen aktiv zu gestalten. Sie glaubt an Fortschritt als Motor für Wohlstand und nachhaltige Entwicklung."
+  },
+  "Bewahrungspartei": {
+    "slogan": "Tradition bewahren, Verantwortung übernehmen.",
+    "beschreibung": "Die Bewahrungspartei legt Wert auf kulturelle Kontinuität, Stabilität und bewährte Werte. Sie strebt eine Politik an, die Sicherheit, Familienstrukturen und soziale Ordnung schützt, ohne die Gesellschaft zu überfordern."
+  },
+  "Ökologische Partei": {
+    "slogan": "Im Einklang mit der Natur leben.",
+    "beschreibung": "Die Ökologische Partei priorisiert Umwelt- und Klimaschutz. Sie setzt auf erneuerbare Energien, ökologische Landwirtschaft und Maßnahmen, die den ökologischen Fußabdruck der Gesellschaft deutlich reduzieren."
+  },
+  "Soziale Gerechtigkeitspartei": {
+    "slogan": "Chancen für alle, nicht nur für wenige.",
+    "beschreibung": "Die Soziale Gerechtigkeitspartei kämpft für faire Bildung, bezahlbaren Wohnraum, gerechte Arbeitsbedingungen und soziale Absicherung, um gesellschaftliche Ungleichheit zu verringern und Chancengleichheit zu fördern."
+  }
+}
