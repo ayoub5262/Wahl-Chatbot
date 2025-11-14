@@ -53,8 +53,7 @@ Das Projekt wird im Rahmen des Seminars *„Kann Code Verantwortung? Wie man Alg
 
 ## Projektstruktur
 ```
-wahl-assistent-ai/
-├── .env                         # Umgebungsvariablen (OpenAI API Key) - NICHT committen!
+Wahl-Chatbot/
 ├── .gitignore                   # Git-Ausschlussliste
 ├── requirements.txt             # Python-Abhängigkeiten
 ├── system_prompt.txt            # System-Prompt für den KI-Chatbot
@@ -77,8 +76,8 @@ wahl-assistent-ai/
 
 ### 1. Repository klonen
 ```bash
-git clone https://github.com/ahmedchtioui1920/wahl-assistent-ai.git
-cd wahl-assistent-ai
+git clone https://github.com/ayoub5262/Wahl-Chatbot.git
+cd Wahl-Chatbot
 ```
 
 ### 2. (Optional) Virtuelle Umgebung erstellen
@@ -94,20 +93,20 @@ source venv/bin/activate  # Mac/Linux
 pip install -r requirements.txt
 ```
 
-### 5. Backend starten
+### 4. Backend starten
 ```bash
 python backend/app.py
 ```
 - Der Flask-Server läuft auf `http://127.0.0.1:5000`
 - Dank absoluter Pfade kann das Backend von jedem Verzeichnis aus gestartet werden
 
-### 6. Frontend öffnen
+### 5. Frontend öffnen
 - **Option A:** Öffnen Sie `frontend/index.html` direkt in Ihrem Browser
 - **Option B (empfohlen):** Nutzen Sie die "Live Server" Extension in VS Code:
   - Rechtsklick auf `frontend/index.html` → "Open with Live Server"
   - Öffnet den Chatbot mit Auto-Reload bei Änderungen
 
-### 7. Chatbot nutzen
+### 6. Chatbot nutzen
 - Stellen Sie sicher, dass das Backend läuft
 - Öffnen Sie das Frontend im Browser
 - Wählen Sie eine Beispielfrage aus der rechten Seitenleiste oder stellen Sie eine eigene Frage
