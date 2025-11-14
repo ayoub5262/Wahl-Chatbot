@@ -44,17 +44,24 @@ Das Projekt wird im Rahmen des Seminars *„Kann Code Verantwortung? Wie man Alg
 - **Flask**: Webframework für RESTful API  
 - **Flask-CORS**: Erlaubt Kommunikation zwischen Frontend und Backend  
 - **OpenAI API**: GPT-4 für KI-Antworten  
+- **Gunicorn**: WSGI-Server für Produktion
 - **dotenv**: Laden von Umgebungsvariablen, insbesondere OpenAI API Key  
 - **HTML/CSS/JS**: Frontend, Chatfenster, Chatverlauf, Beispiel-Fragen  
 - **Visual Studio Code**: Entwicklung und Live Server für Frontend-Test  
 - **Git/GitHub**: Versionskontrolle und Team-Kollaboration
+- **Fly.io**: Cloud-Deployment-Plattform
+- **Docker**: Containerisierung für Deployment
 
 ---
 
 ## Projektstruktur
 ```
 Wahl-Chatbot/
+├── .dockerignore                # Docker-Ausschlussliste
 ├── .gitignore                   # Git-Ausschlussliste
+├── DEPLOYMENT.md                # Fly.io Deployment-Anleitung
+├── Dockerfile                   # Docker-Container-Konfiguration
+├── fly.toml                     # Fly.io App-Konfiguration
 ├── requirements.txt             # Python-Abhängigkeiten
 ├── system_prompt.txt            # System-Prompt für den KI-Chatbot
 ├── backend/
