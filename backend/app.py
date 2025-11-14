@@ -79,5 +79,10 @@ def chat():
     bot_response = get_ai_response(user_message, chat_history)
     return jsonify({"bot_response": bot_response})
 
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "healthy"}), 200
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
