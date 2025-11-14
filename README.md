@@ -94,35 +94,20 @@ source venv/bin/activate  # Mac/Linux
 pip install -r requirements.txt
 ```
 
-### 4. OpenAI API Key einrichten
-- Erstellen Sie einen neuen API-Key auf [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-- Erstellen Sie eine `.env` Datei im **Hauptverzeichnis** (nicht im backend Ordner):
-```bash
-echo OPENAI_API_KEY=your_api_key_here > .env
-```
-- Ersetzen Sie `your_api_key_here` durch Ihren echten API-Key
-- **Wichtig:** Die `.env` Datei wird durch `.gitignore` geschützt und sollte niemals öffentlich geteilt werden!
-
-### 5. API-Verbindung testen (optional)
-```bash
-python backend/openai_test.py
-```
-Sollte eine erfolgreiche Antwort vom Chatbot anzeigen.
-
-### 6. Backend starten
+### 5. Backend starten
 ```bash
 python backend/app.py
 ```
 - Der Flask-Server läuft auf `http://127.0.0.1:5000`
 - Dank absoluter Pfade kann das Backend von jedem Verzeichnis aus gestartet werden
 
-### 7. Frontend öffnen
+### 6. Frontend öffnen
 - **Option A:** Öffnen Sie `frontend/index.html` direkt in Ihrem Browser
 - **Option B (empfohlen):** Nutzen Sie die "Live Server" Extension in VS Code:
   - Rechtsklick auf `frontend/index.html` → "Open with Live Server"
   - Öffnet den Chatbot mit Auto-Reload bei Änderungen
 
-### 8. Chatbot nutzen
+### 7. Chatbot nutzen
 - Stellen Sie sicher, dass das Backend läuft
 - Öffnen Sie das Frontend im Browser
 - Wählen Sie eine Beispielfrage aus der rechten Seitenleiste oder stellen Sie eine eigene Frage
@@ -136,32 +121,6 @@ python backend/app.py
 - Bei unbekannten Fragen wird höflich auf fehlende Informationen hingewiesen  
 - Alle Antworten basieren auf **neutraler Wissensbasis**  
 - Keine persönliche Meinung des Bots  
-
----
-
-## 🔖 Projektstatus
-
-### ✅ Abgeschlossen
-- **Content-Erstellung:** 4 Parteien mit Positionen zu 5 Themen
-- **Backend:** Flask-API mit OpenAI-Integration und absoluten Pfaden
-- **Frontend:** Funktionsfähige Chat-Oberfläche mit Verlauf und Beispiel-Fragen
-- **Wissensbasis:** Strukturierte JSON-Dateien für Parteien und FAQs
-- **Umgebungskonfiguration:** .env-basierte API-Key-Verwaltung
-- **System-Prompt:** Neutraler, informativer Chatbot-Prompt
-- **Fehlerbehandlung:** Robuste Error-Handling für API-Ausfälle
-
-### 🔄 In Entwicklung
-- Testing & Quality Assurance
-- Erweiterte Chat-Features (z.B. persistente Speicherung)
-- Performance-Optimierungen
-
----
-
-## 👥 Team
-| Name | Rolle |
-|------|------|
-| Ayoub & Ahmed | Team 1 - Content, Ethics, Backend & AI |
-| Ibrahim & Walid | Team 2 - Frontend, UX, QA & Documentation |
 
 ---
 
