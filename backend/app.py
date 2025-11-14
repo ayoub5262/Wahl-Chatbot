@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import json
 from openai import OpenAI
@@ -39,7 +39,7 @@ except FileNotFoundError:
     print("Error: system_prompt.txt not found")
     system_prompt = "Du bist ein hilfreicher Wahl-Chatbot."
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend', static_url_path='')
 CORS(app)
 
 def get_ai_response(user_message, chat_history=[]):
@@ -70,6 +70,18 @@ def get_ai_response(user_message, chat_history=[]):
     except Exception as e:
         print(f"OpenAI API Error: {str(e)}")
         return f"Entschuldigung, es gab einen Fehler bei der Verarbeitung Ihrer Anfrage. Bitte versuchen Sie es später erneut."
+
+@app.route("/", methods=["GET"])
+def home():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route("/<path:path>")
+def serve_static(path):
+    return send_from_directory(app.static_folder, path)
+
+@app.route("/data/<path:path>")
+def serve_data(path):
+    return send_from_directory(BASE_DIR / 'data', path)
 
 @app.route("/chat", methods=["POST"])
 def chat():
