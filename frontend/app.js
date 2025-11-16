@@ -6,6 +6,14 @@ const historyList = document.getElementById('history-list');
 const newChatBtn = document.getElementById('newChatBtn');
 const emptyState = document.getElementById('emptyState');
 const headerLogo = document.getElementById('headerLogo');
+const loadingScreen = document.getElementById('loadingScreen');
+
+// Hide loading screen after page loads
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+    }, 1000);
+});
 
 const historyBox = document.getElementById('historyBox');
 const suggestionsBox = document.getElementById('suggestionsBox');

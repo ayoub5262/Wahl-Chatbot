@@ -33,7 +33,7 @@ except FileNotFoundError:
 
 # Load system prompt
 try:
-    with open(BASE_DIR / "system_prompt.txt", "r", encoding="utf-8") as f:
+    with open(BASE_DIR / "data" / "system_prompt.txt", "r", encoding="utf-8") as f:
         system_prompt = f.read()
 except FileNotFoundError:
     print("Error: system_prompt.txt not found")
@@ -85,11 +85,11 @@ def serve_data(path):
 
 @app.route("/wahl-chatbot-logo.png")
 def serve_logo():
-    return send_from_directory(BASE_DIR, 'wahl-chatbot-logo.png')
+    return send_from_directory(BASE_DIR / 'frontend', 'wahl-chatbot-logo.png')
 
 @app.route("/wahl-chatbot-logo1.PNG")
 def serve_logo1():
-    return send_from_directory(BASE_DIR, 'wahl-chatbot-logo1.PNG')
+    return send_from_directory(BASE_DIR / 'frontend', 'wahl-chatbot-logo1.PNG')
 
 @app.route("/chat", methods=["POST"])
 def chat():
