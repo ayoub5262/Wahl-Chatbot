@@ -5,8 +5,50 @@ const suggestionList = document.getElementById('suggestion-list');
 const historyList = document.getElementById('history-list');
 const newChatBtn = document.getElementById('newChatBtn');
 
+const historyBox = document.getElementById('historyBox');
+const suggestionsBox = document.getElementById('suggestionsBox');
+const toggleHistory = document.getElementById('toggleHistory');
+const toggleSuggestions = document.getElementById('toggleSuggestions');
+const closeHistory = document.getElementById('closeHistory');
+const closeSuggestions = document.getElementById('closeSuggestions');
+const chatBox = document.querySelector('.chat-box');
+
 let chatHistory = [];
 let previousChats = [];
+
+// Toggle sidebar functions
+function toggleHistorySidebar() {
+    historyBox.classList.toggle('collapsed');
+    toggleHistory.classList.toggle('visible');
+    updateChatBoxWidth();
+}
+
+function toggleSuggestionsSidebar() {
+    suggestionsBox.classList.toggle('collapsed');
+    toggleSuggestions.classList.toggle('visible');
+    updateChatBoxWidth();
+}
+
+function updateChatBoxWidth() {
+    const historyCollapsed = historyBox.classList.contains('collapsed');
+    const suggestionsCollapsed = suggestionsBox.classList.contains('collapsed');
+    
+    chatBox.classList.remove('expanded-left', 'expanded-right', 'expanded-both');
+    
+    if (historyCollapsed && suggestionsCollapsed) {
+        chatBox.classList.add('expanded-both');
+    } else if (historyCollapsed) {
+        chatBox.classList.add('expanded-left');
+    } else if (suggestionsCollapsed) {
+        chatBox.classList.add('expanded-right');
+    }
+}
+
+// Event listeners for toggle buttons
+toggleHistory.addEventListener('click', toggleHistorySidebar);
+toggleSuggestions.addEventListener('click', toggleSuggestionsSidebar);
+closeHistory.addEventListener('click', toggleHistorySidebar);
+closeSuggestions.addEventListener('click', toggleSuggestionsSidebar);
 
 // Load 15 suggestions from JSON
 async function loadSuggestions() {

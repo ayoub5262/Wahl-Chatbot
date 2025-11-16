@@ -10,13 +10,17 @@
     <div class="chat-container">
 
         <!-- LEFT PANEL: Chat History -->
-        <div class="history-box">
+        <div class="history-box" id="historyBox">
+            <button class="close-sidebar" id="closeHistory">✕</button>
             <div class="history-header">
                 <h2>Verlauf</h2>
                 <button id="newChatBtn">Neuer Chat</button>
             </div>
             <ul id="history-list"></ul>
         </div>
+
+        <!-- LEFT TOGGLE BUTTON -->
+        <button class="toggle-sidebar left-toggle" id="toggleHistory">☰</button>
 
         <!-- CENTER PANEL: Active Chat -->
         <div class="chat-box">
@@ -31,8 +35,12 @@
             </div>
         </div>
 
+        <!-- RIGHT TOGGLE BUTTON -->
+        <button class="toggle-sidebar right-toggle" id="toggleSuggestions">❓</button>
+
         <!-- RIGHT PANEL: Suggestions -->
-        <div class="suggestions-box">
+        <div class="suggestions-box" id="suggestionsBox">
+            <button class="close-sidebar" id="closeSuggestions">✕</button>
             <h2>Beispiel-Fragen</h2>
             <ul id="suggestion-list"></ul>
         </div>
