@@ -113,7 +113,7 @@ async function sendMessage() {
     const botPlaceholder = messagesEl.querySelector('.bot-message:last-child');
 
     try {
-        const res = await fetch('http://localhost:5000/chat', {
+        const res = await fetch('/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_message: text, chat_history: chatHistory.slice(0, -1) })
