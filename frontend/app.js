@@ -21,12 +21,22 @@ function toggleHistorySidebar() {
     historyBox.classList.toggle('collapsed');
     toggleHistory.classList.toggle('visible');
     updateChatBoxWidth();
+    
+    // Close suggestions if open on mobile
+    if (window.innerWidth <= 1100 && !historyBox.classList.contains('collapsed')) {
+        suggestionsBox.classList.add('collapsed');
+    }
 }
 
 function toggleSuggestionsSidebar() {
     suggestionsBox.classList.toggle('collapsed');
     toggleSuggestions.classList.toggle('visible');
     updateChatBoxWidth();
+    
+    // Close history if open on mobile
+    if (window.innerWidth <= 1100 && !suggestionsBox.classList.contains('collapsed')) {
+        historyBox.classList.add('collapsed');
+    }
 }
 
 function updateChatBoxWidth() {
@@ -50,10 +60,18 @@ toggleSuggestions.addEventListener('click', toggleSuggestionsSidebar);
 closeHistory.addEventListener('click', toggleHistorySidebar);
 closeSuggestions.addEventListener('click', toggleSuggestionsSidebar);
 
+// Initialize collapsed state on mobile
+if (window.innerWidth <= 1100) {
+    historyBox.classList.add('collapsed');
+    suggestionsBox.classList.add('collapsed');
+    toggleHistory.classList.add('visible');
+    toggleSuggestions.classList.add('visible');
+}
+
 // Load 15 suggestions from JSON
 async function loadSuggestions() {
     try {
-        const res = await fetch('../data/faqs.json');
+        const res = await fetch('/data/faqs.json');
         const data = await res.json();
         const items = data.faq_questions.slice(0, 15);
         suggestionList.innerHTML = '';
@@ -63,6 +81,10 @@ async function loadSuggestions() {
             li.addEventListener('click', () => {
                 userInput.value = q;
                 sendMessage();
+                // Close suggestions sidebar on mobile after selection
+                if (window.innerWidth <= 1100 && !suggestionsBox.classList.contains('collapsed')) {
+                    toggleSuggestionsSidebar();
+                }
             });
             suggestionList.appendChild(li);
         });
@@ -123,6 +145,10 @@ function loadChat(summary) {
     if (index >= 0) {
         chatHistory = [...previousChats[index]];
         renderChat();
+        // Close history sidebar on mobile after loading chat
+        if (window.innerWidth <= 1100 && !historyBox.classList.contains('collapsed')) {
+            toggleHistorySidebar();
+        }
     }
 }
 
@@ -140,6 +166,10 @@ function startNewChat() {
     saveChatToHistory();
     chatHistory = [];
     messagesEl.innerHTML = '';
+    // Close history sidebar on mobile after new chat
+    if (window.innerWidth <= 1100 && !historyBox.classList.contains('collapsed')) {
+        toggleHistorySidebar();
+    }
 }
 
 sendBtn.addEventListener('click', sendMessage);
