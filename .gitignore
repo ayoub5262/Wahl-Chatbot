@@ -12,17 +12,39 @@ __pycache__/
 venv/
 env/
 ENV/
-.venv
+*.egg-info/
+dist/
+build/
+.eggs/
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+
+# Logs
+*.log
+logs/
+app.log
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Fly.io
-.fly/
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
