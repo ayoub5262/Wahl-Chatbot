@@ -4,6 +4,8 @@ const sendBtn = document.getElementById('sendBtn');
 const suggestionList = document.getElementById('suggestion-list');
 const historyList = document.getElementById('history-list');
 const newChatBtn = document.getElementById('newChatBtn');
+const emptyState = document.getElementById('emptyState');
+const headerLogo = document.getElementById('headerLogo');
 
 const historyBox = document.getElementById('historyBox');
 const suggestionsBox = document.getElementById('suggestionsBox');
@@ -80,7 +82,7 @@ async function loadSuggestions() {
             li.textContent = q;
             li.addEventListener('click', () => {
                 userInput.value = q;
-                sendMessage();
+                userInput.focus();
                 // Close suggestions sidebar on mobile after selection
                 if (window.innerWidth <= 1100 && !suggestionsBox.classList.contains('collapsed')) {
                     toggleSuggestionsSidebar();
@@ -95,6 +97,12 @@ async function loadSuggestions() {
 
 // Add message to chat window
 function addMessage(text, sender) {
+    // Hide empty state and show header logo when first real message appears
+    if (emptyState && !emptyState.classList.contains('hidden')) {
+        emptyState.classList.add('hidden');
+        if (headerLogo) headerLogo.classList.remove('hidden');
+    }
+
     const div = document.createElement('div');
     div.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
     div.textContent = text;
@@ -159,6 +167,13 @@ function renderChat() {
         addMessage(m.user, 'user');
         addMessage(m.bot, 'bot');
     });
+
+    // If there are no messages, show empty state again
+    if (chatHistory.length === 0 && emptyState) {
+        messagesEl.appendChild(emptyState);
+        emptyState.classList.remove('hidden');
+        if (headerLogo) headerLogo.classList.add('hidden');
+    }
 }
 
 // Start new chat
@@ -166,6 +181,14 @@ function startNewChat() {
     saveChatToHistory();
     chatHistory = [];
     messagesEl.innerHTML = '';
+    // Show empty state and hide header logo on fresh chat
+    if (emptyState) {
+        messagesEl.appendChild(emptyState);
+        emptyState.classList.remove('hidden');
+    }
+    if (headerLogo) {
+        headerLogo.classList.add('hidden');
+    }
     // Close history sidebar on mobile after new chat
     if (window.innerWidth <= 1100 && !historyBox.classList.contains('collapsed')) {
         toggleHistorySidebar();

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wahl-Chatbot</title>
+    <link rel="icon" type="image/png" href="../wahl-chatbot-logo1.PNG">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,10 +26,17 @@
         <!-- CENTER PANEL: Active Chat -->
         <div class="chat-box">
             <div class="chat-header">
+                <img src="../wahl-chatbot-logo1.PNG" alt="Wahl-Chatbot Logo" class="chat-logo hidden" id="headerLogo">
                 <h1>Wahl-Chatbot</h1>
-                <p>Stelle eine Frage zu den Parteien oder wähle eine Beispiel-Frage aus.</p>
             </div>
-            <div class="chat-messages" id="messages"></div>
+            <div class="chat-messages" id="messages">
+                <div class="empty-state" id="emptyState">
+                    <div>
+                        <img src="../wahl-chatbot-logo1.PNG" alt="Wahl-Chatbot Logo" class="chat-logo-large">
+                        <p class="empty-subtitle">Stelle eine Frage zu den Parteien oder wähle eine Beispiel-Frage aus.</p>
+                    </div>
+                </div>
+            </div>
             <div class="chat-input-area">
                 <input type="text" id="userInput" placeholder="Schreibe deine Frage...">
                 <button id="sendBtn">Senden</button>
