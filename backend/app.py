@@ -83,6 +83,14 @@ def serve_static(path):
 def serve_data(path):
     return send_from_directory(BASE_DIR / 'data', path)
 
+@app.route("/wahl-chatbot-logo.png")
+def serve_logo():
+    return send_from_directory(BASE_DIR, 'wahl-chatbot-logo.png')
+
+@app.route("/wahl-chatbot-logo1.PNG")
+def serve_logo1():
+    return send_from_directory(BASE_DIR, 'wahl-chatbot-logo1.PNG')
+
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
