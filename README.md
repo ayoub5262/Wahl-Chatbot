@@ -28,14 +28,16 @@ Das Projekt wird im Rahmen des Seminars *„Kann Code Verantwortung? Wie man Alg
 ---
 
 ## Features
-- Chatbot, der Fragen zu den Parteien beantwortet  
-- Anzeige von 15 Beispiel-Fragen für Benutzer:innen  
-- Chatverlauf und neue Chat-Funktion  
-- Frontend: HTML/CSS/JavaScript (responsive)  
-- Backend: Python + Flask + OpenAI API  
-- System-Prompt für neutrale, sachliche Antworten  
-- Fehler-Handling bei API-Ausfällen  
-- Absolute Pfade im Backend, um von jedem Arbeitsverzeichnis aus zu funktionieren
+- 🤖 **Intelligenter Chatbot** - Beantwortet Fragen zu den Parteien basierend auf strukturierter Wissensbasis
+- 💡 **15 Beispiel-Fragen** - Vordefinierte Fragen zur einfachen Nutzung
+- 📜 **Chat-Verlauf** - Speichert vorherige Konversationen mit Verlaufsansicht
+- 📱 **Responsive Design** - Optimiert für Desktop, Tablet und Mobile
+- 🎯 **Neutrale Antworten** - System-Prompt gewährleistet sachliche, unparteiische Informationen
+- ✅ **Input-Validierung** - Maximale Nachrichtenlänge, Chat-History-Limits
+- 📊 **Umfassendes Logging** - Detaillierte Logs für Debugging und Monitoring
+- 🔧 **Zentrale Konfiguration** - Einfache Verwaltung über `.env` und `config.py`
+- 🛡️ **Fehlerbehandlung** - Robuste Error-Handling-Mechanismen
+- 🐳 **Docker-Support** - Containerisiert für einfaches Deployment
 
 ---
 
@@ -58,19 +60,22 @@ Das Projekt wird im Rahmen des Seminars *„Kann Code Verantwortung? Wie man Alg
 ```
 Wahl-Chatbot/
 ├── .dockerignore                # Docker-Ausschlussliste
+├── .env.example                 # Template für Umgebungsvariablen
 ├── .gitignore                   # Git-Ausschlussliste
 ├── DEPLOYMENT.md                # Fly.io Deployment-Anleitung
 ├── Dockerfile                   # Docker-Container-Konfiguration
 ├── fly.toml                     # Fly.io App-Konfiguration
 ├── requirements.txt             # Python-Abhängigkeiten
-├── system_prompt.txt            # System-Prompt für den KI-Chatbot
 ├── backend/
-│   ├── app.py                   # Flask Backend-Server (nutzt absolute Pfade)
-│   ├── openai_test.py           # Testscript für OpenAI API
-│   └── knowledge_base.json      # Wissensbasis: Parteienpositionen nach Themen
+│   ├── app.py                   # Flask Backend-Server mit Validierung & Logging
+│   ├── config.py                # Zentrale Konfigurationsverwaltung
+│   ├── utils.py                 # Logger und Hilfsfunktionen
+│   └── openai_test.py           # Umfassendes Testscript für API & Konfiguration
 ├── data/
+│   ├── knowledge_base.json      # Wissensbasis: Parteienpositionen nach Themen
 │   ├── parties_info.json        # Name, Slogan und Beschreibung der Parteien
-│   └── faqs.json                # Beispiel-Fragen für den Chatbot (15 Fragen)
+│   ├── faqs.json                # Beispiel-Fragen für den Chatbot (15 Fragen)
+│   └── system_prompt.txt        # System-Prompt für den KI-Chatbot
 └── frontend/
     ├── index.html               # Hauptseite des Chatbots
     ├── app.js                   # Frontend-Logik (Chat, Verlauf, Vorschläge)
@@ -100,42 +105,132 @@ source venv/bin/activate  # Mac/Linux
 pip install -r requirements.txt
 ```
 
-### 4. Backend starten
+### 4. Umgebungsvariablen einrichten
+```bash
+# Kopiere die Beispiel-Datei
+copy .env.example .env   # Windows
+# oder
+cp .env.example .env     # Mac/Linux
+
+# Bearbeite .env und füge deinen OpenAI API Key hinzu
+# OPENAI_API_KEY=sk-your-api-key-here
+```
+
+### 5. (Optional) Konfiguration testen
+```bash
+# Teste API-Verbindung, Konfiguration und Datenfiles
+python backend/openai_test.py
+```
+
+### 6. Backend starten
 ```bash
 python backend/app.py
 ```
 - Der Flask-Server läuft auf `http://127.0.0.1:5000`
+- Logs werden in der Konsole und in `app.log` gespeichert
 - Dank absoluter Pfade kann das Backend von jedem Verzeichnis aus gestartet werden
 
-### 5. Frontend öffnen
-- **Option A:** Öffnen Sie `frontend/index.html` direkt in Ihrem Browser
-- **Option B (empfohlen):** Nutzen Sie die "Live Server" Extension in VS Code:
-  - Rechtsklick auf `frontend/index.html` → "Open with Live Server"
-  - Öffnet den Chatbot mit Auto-Reload bei Änderungen
+### 7. Frontend öffnen
+- Öffnen Sie `http://127.0.0.1:5000` in Ihrem Browser
+- Der Server stellt automatisch das Frontend bereit
 
-### 6. Chatbot nutzen
-- Stellen Sie sicher, dass das Backend läuft
-- Öffnen Sie das Frontend im Browser
-- Wählen Sie eine Beispielfrage aus der rechten Seitenleiste oder stellen Sie eine eigene Frage
-- Der Chatbot antwortet basierend auf der Wissensbasis
-- Nutzen Sie "Neuer Chat" um einen frischen Chat zu starten (Verlauf wird links gespeichert)
+### 8. Chatbot nutzen
+- 💬 Stellen Sie eine eigene Frage oder wählen Sie eine Beispielfrage aus der rechten Seitenleiste
+- 📚 Der Chatbot antwortet neutral und sachlich basierend auf der Wissensbasis
+- 🔄 Nutzen Sie "Neuer Chat" um eine frische Konversation zu starten
+- 📂 Der Verlauf wird in der linken Seitenleiste gespeichert und kann jederzeit abgerufen werden
+
+---
+
+## 🔧 Konfiguration
+
+Die Anwendung kann über Umgebungsvariablen in der `.env` Datei konfiguriert werden:
+
+```env
+# OpenAI Konfiguration
+OPENAI_API_KEY=your_api_key_here    # Erforderlich
+OPENAI_MODEL=gpt-4                  # Standard: gpt-4
+TEMPERATURE=0.7                     # Standard: 0.7
+MAX_TOKENS=500                      # Standard: 500
+
+# Server Konfiguration
+PORT=5000                           # Standard: 5000
+DEBUG=False                         # Standard: False
+```
+
+### Validierung & Limits
+- **Max. Nachrichtenlänge:** 1000 Zeichen
+- **Max. Chat-History:** 50 Einträge
+- **Automatische Validierung** aller Eingaben
+- **Logging** in `app.log` und Konsole
+
+---
+
+## 🧪 Testing
+
+Teste die API-Verbindung und Konfiguration:
+
+```bash
+python backend/openai_test.py
+```
+
+Das Testscript prüft:
+- ✅ Konfigurationsvalidierung
+- ✅ Existenz und Validität aller Datenfiles
+- ✅ OpenAI API-Verbindung
+- ✅ Funktionalität mit Test-Anfrage
 
 ---
 
 ## Nutzungshinweise
-- Chatbot beantwortet nur Fragen, die in der Wissensbasis enthalten sind  
-- Bei unbekannten Fragen wird höflich auf fehlende Informationen hingewiesen  
-- Alle Antworten basieren auf **neutraler Wissensbasis**  
-- Keine persönliche Meinung des Bots  
+- 🎯 **Neutrale Wissensbasis** - Alle Antworten basieren ausschließlich auf vordefinierten Daten
+- ℹ️ **Begrenzte Informationen** - Bei unbekannten Fragen wird höflich auf fehlende Informationen hingewiesen
+- 🤐 **Keine Meinungen** - Der Bot gibt keine persönlichen Empfehlungen ab
+- 📊 **Faktenbasiert** - Nur objektive Informationen aus der Wissensbasis
 
 ---
 
-## 📌 Hinweise
+## 📌 Technische Verbesserungen
+
+Das Projekt wurde mit folgenden Best Practices optimiert:
+
+### Backend-Architektur
+- ✅ **Zentrale Konfiguration** (`backend/config.py`) - Alle Einstellungen an einem Ort
+- ✅ **Strukturiertes Logging** (`backend/utils.py`) - Console & File-Logging
+- ✅ **Input-Validierung** - Schutz vor ungültigen/zu langen Eingaben
+- ✅ **Error Handling** - Umfassende Try-Catch-Blöcke mit aussagekräftigen Fehlermeldungen
+- ✅ **Modulare Struktur** - Wiederverwendbare Komponenten
+
+### Sicherheit & Validierung
+- 🔒 API-Key über Umgebungsvariablen (nie im Code)
+- ✅ Request-Validierung (Typ, Länge, Format)
+- 🛡️ Error-Handling für API-Ausfälle
+- 📝 Audit-Trail durch detailliertes Logging
+
+### Code-Qualität
+- 📚 Dokumentierte Funktionen mit Docstrings
+- 🎯 Klare Trennung von Daten, Logik und Präsentation
+- 🔧 Testscript für schnelle Validierung
+- 📦 Docker-Ready für einfaches Deployment
+
+---
+
+## 📌 Hinweise zu Algorithmic Accountability
 - Der Chatbot ist **neutral** konzipiert, um Bias zu vermeiden
 - Alle Antworten basieren ausschließlich auf der vordefinierten Wissensbasis
-- Projekt dient zur Untersuchung von **Algorithmic Accountability**
+- Transparente Datenstruktur ermöglicht Nachvollziehbarkeit der Antworten
+- Projekt dient zur Untersuchung von **Algorithmic Accountability** im politischen Kontext
 
 ---
 
-## Lizenz
+## 🤝 Mitwirken
+
+Verbesserungsvorschläge sind willkommen! Bei Problemen oder Fragen:
+1. Nutze `python backend/openai_test.py` für Diagnose
+2. Prüfe die Logs in `app.log`
+3. Stelle sicher, dass `.env` korrekt konfiguriert ist
+
+---
+
+## 📄 Lizenz
 Dieses Projekt ist für Bildungs- und Seminarzwecke erstellt.
