@@ -1,5 +1,7 @@
 # Wahl-Chatbot – Politischer Chatbot zur Parteieninformation
 
+![Wahl-Chatbot Demo](Screenshot.gif)
+
 ## Projektbeschreibung
 Der **Wahl-Chatbot** ist ein Prototyp, der Benutzer:innen ermöglicht, Fragen zu fiktiven politischen Parteien zu stellen.  
 Ziel des Projekts ist es, **Algorithmic Accountability** zu untersuchen und zu zeigen, wie KI-basierte Systeme auf politische Fragen neutral und sachlich antworten können.  
