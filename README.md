@@ -62,7 +62,6 @@ Das Projekt wird im Rahmen des Seminars *„Kann Code Verantwortung? Wie man Alg
 ```
 Wahl-Chatbot/
 ├── .dockerignore                # Docker-Ausschlussliste
-├── .env.example                 # Template für Umgebungsvariablen
 ├── .gitignore                   # Git-Ausschlussliste
 ├── DEPLOYMENT.md                # Fly.io Deployment-Anleitung
 ├── Dockerfile                   # Docker-Container-Konfiguration
