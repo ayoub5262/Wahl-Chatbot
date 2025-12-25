@@ -143,4 +143,3 @@ Antwort: Dazu liegen in der Wissensbasis keine Informationen vor.
 
 ---
 
-**Anmerkung:** Alle Fragen und Antworten sind auf GitHub veröffentlicht und können dort nachgelesen werden.
