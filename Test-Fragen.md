@@ -1,6 +1,6 @@
 # Ergebnisse der Wissensabdeckung
 
-Die folgenden Fragen wurden getestet und die Antworten basieren auf der bereitgestellten Wissensbasis. Fragen und Antworten sind auf [GitHub](#) veröffentlicht.
+Die folgenden Fragen wurden getestet und die Antworten basieren auf der bereitgestellten Wissensbasis.
 
 ---
 
