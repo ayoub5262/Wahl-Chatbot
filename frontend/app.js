@@ -150,20 +150,53 @@ function saveChatToHistory() {
     previousChats.push([...chatHistory]);
 
     const li = document.createElement('li');
-    li.textContent = summary.substring(0, 50) + (summary.length > 50 ? '...' : '');
-    li.addEventListener('click', () => loadChat(li.textContent));
+    li.className = 'history-item';
+    
+    const textSpan = document.createElement('span');
+    textSpan.textContent = summary.substring(0, 50) + (summary.length > 50 ? '...' : '');
+    textSpan.className = 'history-text';
+    
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerHTML = '🗑️';
+    deleteBtn.className = 'delete-chat-btn';
+    deleteBtn.title = 'Chat löschen';
+    
+    li.appendChild(textSpan);
+    li.appendChild(deleteBtn);
+    
+    li.addEventListener('click', (e) => {
+        if (e.target.closest('.delete-chat-btn')) return;
+        const index = Array.from(historyList.children).indexOf(li);
+        loadChat(index);
+    });
+    
+    deleteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const index = Array.from(historyList.children).indexOf(li);
+        deleteChat(index);
+    });
+
     historyList.appendChild(li);
 }
 
 // Load selected chat
-function loadChat(summary) {
-    const index = Array.from(historyList.children).findIndex(li => li.textContent === summary);
-    if (index >= 0) {
+function loadChat(index) {
+    if (index >= 0 && index < previousChats.length) {
         chatHistory = [...previousChats[index]];
         renderChat();
         // Close history sidebar on mobile after loading chat
         if (window.innerWidth <= 1100 && !historyBox.classList.contains('collapsed')) {
             toggleHistorySidebar();
+        }
+    }
+}
+
+// Delete chat
+function deleteChat(index) {
+    if (index >= 0 && index < previousChats.length) {
+        previousChats.splice(index, 1);
+        if (historyList.children[index]) {
+            historyList.children[index].remove();
         }
     }
 }

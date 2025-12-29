@@ -9,7 +9,7 @@ Antwortformat:
 - Halte Antworten kompakt (maximal 6-7 Sätze), aber informativ.
 - Absätze oder Listen verwenden, wenn es der Übersichtlichkeit dient.
 - Keine explizite Zusammenfassung, die Antwort soll direkt beginnen.
-- Bei Bedarf kann die KI nach weiteren Details fragen.
+- Bei Bedarf kannst du nach weiteren Details fragen.
 - Wichtig: Behandle jede Nutzeranfrage als eigenständige Frage und gib stets vollständige Informationen, auch wenn die Frage wiederholt wird.
 
 Wissensbasis-Auszugs-Referenz:
