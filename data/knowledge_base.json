@@ -1,68 +1,68 @@
 {
   "Umwelt": {
     "Fortschrittspartei": "Fördert innovative Technologien, Investitionen in erneuerbare Energien und Maßnahmen zur Reduktion von Emissionen.",
-    "Bewahrungspartei": "Unterstützt Umweltschutz, bevorzugt Lösungen, die wirtschaftlich tragbar und sozial ausgewogen sind.",
+    "Soziale Gerechtigkeitspartei": "Kombiniert Umweltpolitik mit sozialer Verantwortung, fördert nachhaltige Jobs und Infrastruktur für alle.",
     "Ökologische Partei": "Setzt auf sofortigen Umstieg auf erneuerbare Energien, strikte CO2-Reduktion und Schutz natürlicher Lebensräume, inklusive Förderung von Elektromobilität.",
-    "Soziale Gerechtigkeitspartei": "Kombiniert Umweltpolitik mit sozialer Verantwortung, fördert nachhaltige Jobs und Infrastruktur für alle."
+    "Bewahrungspartei": "Unterstützt Umweltschutz, bevorzugt Lösungen, die wirtschaftlich tragbar und sozial ausgewogen sind."
   },
   "Wirtschaft": {
-    "Fortschrittspartei": "Unterstützt Start-ups, Digitalisierung, KI-Anwendungen und nachhaltige Wachstumsstrategien, inklusive Ausbau erneuerbarer Energien.",
-    "Bewahrungspartei": "Fokussiert auf Mittelstandsstärkung, stabile Märkte und konservative Haushaltsführung, achtet auf stabile Energiepreise.",
+    "Soziale Gerechtigkeitspartei": "Verfolgt faire Löhne, soziale Sicherheit und Umverteilung, um Ungleichheit zu reduzieren und Chancengleichheit zu fördern.",
     "Ökologische Partei": "Priorisiert regionale Wirtschaftskreisläufe, nachhaltige Produktion und umweltfreundliche Unternehmen.",
-    "Soziale Gerechtigkeitspartei": "Verfolgt faire Löhne, soziale Sicherheit und Umverteilung, um Ungleichheit zu reduzieren und Chancengleichheit zu fördern."
+    "Bewahrungspartei": "Fokussiert auf Mittelstandsstärkung, stabile Märkte und konservative Haushaltsführung, achtet auf stabile Energiepreise.",
+    "Fortschrittspartei": "Unterstützt Start-ups, Digitalisierung, KI-Anwendungen und nachhaltige Wachstumsstrategien, inklusive Ausbau erneuerbarer Energien."
   },
   "Bildung": {
-    "Fortschrittspartei": "Setzt auf Digitalisierung, MINT-Förderung und moderne Lernmethoden.",
-    "Bewahrungspartei": "Betont klassische Bildung, Werteerziehung und Traditionsbewusstsein, inklusive digitaler Bildungsangebote in Grenzen.",
     "Ökologische Partei": "Führt Bildungsprogramme zu Nachhaltigkeit, Umweltschutz und ökologischer Verantwortung ein.",
-    "Soziale Gerechtigkeitspartei": "Garantiert kostenfreie Bildung und gleiche Chancen für alle Kinder."
+    "Soziale Gerechtigkeitspartei": "Garantiert kostenfreie Bildung und gleiche Chancen für alle Kinder.",
+    "Bewahrungspartei": "Betont klassische Bildung, Werteerziehung und Traditionsbewusstsein, inklusive digitaler Bildungsangebote in Grenzen.",
+    "Fortschrittspartei": "Setzt auf Digitalisierung, MINT-Förderung und moderne Lernmethoden."
   },
   "Atomenergie": {
-    "Fortschrittspartei": "Setzt auf wissenschaftliche Forschung und technologische Lösungen, eventuell auch Kernenergie zur Energiewende.",
     "Bewahrungspartei": "Unterstützt stabile Energiequellen, dazu kann Atomenergie gehören, bevorzugt jedoch bewährte Technologien.",
-    "Ökologische Partei": "Lehnt Atomenergie ab und fokussiert sich auf erneuerbare Energien wie Wind, Sonne und Wasserkraft.",
-    "Soziale Gerechtigkeitspartei": "Keine direkte Haltung zu Atomenergie, legt aber Wert auf sichere, nachhaltige Energieversorgung."
+    "Fortschrittspartei": "Setzt auf wissenschaftliche Forschung und technologische Lösungen, eventuell auch Kernenergie zur Energiewende.",
+    "Soziale Gerechtigkeitspartei": "Keine direkte Haltung zu Atomenergie, legt aber Wert auf sichere, nachhaltige Energieversorgung.",
+    "Ökologische Partei": "Lehnt Atomenergie ab und fokussiert sich auf erneuerbare Energien wie Wind, Sonne und Wasserkraft."
   },
   "Gesundheit": {
     "Fortschrittspartei": "Fördert digitale Gesundheitstechnologien, Telemedizin und datenbasierte Innovationen.",
-    "Bewahrungspartei": "Bewahrt das bestehende Gesundheitssystem, unterstützt Hausärzte und stabile Versorgung in ländlichen Regionen.",
     "Ökologische Partei": "Setzt auf Prävention, gesunde Ernährung und nachhaltige Medizinpraktiken.",
+    "Bewahrungspartei": "Bewahrt das bestehende Gesundheitssystem, unterstützt Hausärzte und stabile Versorgung in ländlichen Regionen.",
     "Soziale Gerechtigkeitspartei": "Sichert allen Bürgerinnen und Bürgern Zugang zu hochwertiger medizinischer Versorgung."
   },
   "Migration": {
-    "Fortschrittspartei": "Unterstützt qualifizierte Zuwanderung und digitale Integrationsprogramme.",
-    "Bewahrungspartei": "Begrenzte Migration, mit Fokus auf Integration über gesellschaftliche Regeln und Wertevermittlung.",
+    "Soziale Gerechtigkeitspartei": "Fördert solidarische Aufnahme, Integration und Chancengleichheit.",
     "Ökologische Partei": "Offene Haltung bei humanitärer Migration, globale Solidarität und Verantwortung.",
-    "Soziale Gerechtigkeitspartei": "Fördert solidarische Aufnahme, Integration und Chancengleichheit."
+    "Fortschrittspartei": "Unterstützt qualifizierte Zuwanderung und digitale Integrationsprogramme.",
+    "Bewahrungspartei": "Begrenzte Migration, mit Fokus auf Integration über gesellschaftliche Regeln und Wertevermittlung."
   },
   "Steuern": {
-    "Fortschrittspartei": "Setzt auf innovative Wirtschaftssteuerpolitik zur Förderung von Investitionen.",
-    "Bewahrungspartei": "Bevorzugt stabile Steuersysteme und vorsichtige Haushaltsführung.",
     "Ökologische Partei": "Fördert nachhaltige Wirtschaft durch gezielte Steueranreize für Umweltprojekte.",
-    "Soziale Gerechtigkeitspartei": "Setzt auf Umverteilung, faire Steuern und soziale Absicherung."
+    "Fortschrittspartei": "Setzt auf innovative Wirtschaftssteuerpolitik zur Förderung von Investitionen.",
+    "Soziale Gerechtigkeitspartei": "Setzt auf Umverteilung, faire Steuern und soziale Absicherung.",
+    "Bewahrungspartei": "Bevorzugt stabile Steuersysteme und vorsichtige Haushaltsführung."
   },
   "Familienpolitik": {
-    "Fortschrittspartei": "Unterstützt Familien durch moderne Betreuungs- und Bildungsangebote.",
     "Bewahrungspartei": "Fokussiert auf traditionelle Familienförderung und stabile Strukturen.",
-    "Ökologische Partei": "Bietet familienfreundliche, umweltbewusste Programme.",
-    "Soziale Gerechtigkeitspartei": "Setzt auf soziale Unterstützung für alle Familien."
+    "Soziale Gerechtigkeitspartei": "Setzt auf soziale Unterstützung für alle Familien.",
+    "Fortschrittspartei": "Unterstützt Familien durch moderne Betreuungs- und Bildungsangebote.",
+    "Ökologische Partei": "Bietet familienfreundliche, umweltbewusste Programme."
   },
   "Europa": {
-    "Fortschrittspartei": "Fördert Zusammenarbeit und technologische Innovation in Europa.",
     "Bewahrungspartei": "Unterstützt die EU, betont jedoch nationale Werte und Souveränität.",
+    "Fortschrittspartei": "Fördert Zusammenarbeit und technologische Innovation in Europa.",
     "Ökologische Partei": "Setzt auf europäische Klimaschutzmaßnahmen und Solidarität.",
     "Soziale Gerechtigkeitspartei": "Unterstützt soziale Standards und Integration innerhalb der EU."
   },
   "Arbeitsmarkt": {
-    "Fortschrittspartei": "Fördert zukunftsorientierte Arbeitsplätze durch Technologie und Innovation.",
+    "Soziale Gerechtigkeitspartei": "Setzt auf faire Arbeitsbedingungen, Umverteilung und Chancengleichheit.",
     "Bewahrungspartei": "Setzt auf stabile Arbeitsplätze und konservative Marktstrategien.",
-    "Ökologische Partei": "Unterstützt grüne Jobs und nachhaltige Beschäftigung.",
-    "Soziale Gerechtigkeitspartei": "Setzt auf faire Arbeitsbedingungen, Umverteilung und Chancengleichheit."
+    "Fortschrittspartei": "Fördert zukunftsorientierte Arbeitsplätze durch Technologie und Innovation.",
+    "Ökologische Partei": "Unterstützt grüne Jobs und nachhaltige Beschäftigung."
   },
   "Landwirtschaft": {
-    "Fortschrittspartei": "Fördert technologische Lösungen in der Landwirtschaft.",
-    "Bewahrungspartei": "Setzt auf traditionelle Landwirtschaft mit stabilen Produktionsmethoden.",
     "Ökologische Partei": "Bevorzugt ökologische Landwirtschaft und nachhaltige Produktionsmethoden.",
+    "Bewahrungspartei": "Setzt auf traditionelle Landwirtschaft mit stabilen Produktionsmethoden.",
+    "Fortschrittspartei": "Fördert technologische Lösungen in der Landwirtschaft.",
     "Soziale Gerechtigkeitspartei": "Fördert nachhaltige Landwirtschaft mit sozialer Verantwortung."
   }
 }
