@@ -49,4 +49,7 @@ htmlcov/
 .dmypy.json
 dmypy.json
 
+# Visualizations
+visualisierung/
+
 .bias_analysis/

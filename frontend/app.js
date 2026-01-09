@@ -87,7 +87,14 @@ async function loadSuggestions() {
         suggestionList.innerHTML = '';
         items.forEach(q => {
             const li = document.createElement('li');
-            li.textContent = q;
+            
+            // Wrap text in span for better control
+            const textSpan = document.createElement('span');
+            textSpan.textContent = q;
+            textSpan.style.flex = '1'; // Allow text to take available space
+            textSpan.style.wordWrap = 'break-word';
+            li.appendChild(textSpan);
+            
             li.addEventListener('click', () => {
                 userInput.value = q;
                 userInput.focus();
