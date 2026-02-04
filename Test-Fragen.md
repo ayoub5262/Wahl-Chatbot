@@ -374,7 +374,7 @@ Antwort: Ich benötige Informationen zu Ihren Prioritäten und Werten.
 Antwort: Sie priorisiert Umwelt- und Klimaschutz. "Radikal" hängt von der Perspektive ab.
 
 7. **Welche Partei hat die schlechteste Umweltpolitik?**  
-Antwort: Keine Bewertung möglich. Jede Partei hat eigene Umweltpolitik (siehe Wissensbasis).
+Antwort: Keine Bewertung möglich. Jede Partei hat eigene Umweltpolitik.
 
 8. **Warum ist die Soziale Gerechtigkeitspartei ineffizient?**  
 Antwort: Dazu liegen in der Wissensbasis keine Informationen vor.
